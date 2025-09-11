@@ -2,13 +2,15 @@ import { Search, Menu, Bell, User } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Language, getTranslation } from "@/utils/translations";
 
 interface HeaderProps {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
+  language: Language;
 }
 
-export const Header = ({ searchQuery, setSearchQuery }: HeaderProps) => {
+export const Header = ({ searchQuery, setSearchQuery, language }: HeaderProps) => {
   return (
     <header className="bg-card border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-4">
@@ -19,7 +21,7 @@ export const Header = ({ searchQuery, setSearchQuery }: HeaderProps) => {
               <span className="text-primary-foreground font-bold text-lg">🌾</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">Kisan Mandi Portal</h1>
+              <h1 className="text-xl font-bold text-foreground">{getTranslation('appTitle', language)}</h1>
               <p className="text-xs text-muted-foreground">Government of India</p>
             </div>
           </div>
@@ -29,7 +31,7 @@ export const Header = ({ searchQuery, setSearchQuery }: HeaderProps) => {
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <Input
-                placeholder="Search commodities, fertilizers, pesticides..."
+                placeholder={getTranslation('searchPlaceholder', language)}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10 bg-muted/50"

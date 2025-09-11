@@ -6,7 +6,7 @@ interface PesticideRatesProps {
   searchQuery: string;
 }
 
-// Mock data for demonstration
+// Comprehensive pesticide data from Indian markets
 const pesticideData = [
   {
     name: "Chlorpyrifos 20% EC",
@@ -19,6 +19,56 @@ const pesticideData = [
     activeIngredient: "Chlorpyrifos 20%"
   },
   {
+    name: "Profenofos 50% EC",
+    type: "Insecticide",
+    price: 680,
+    unit: "₹/Liter",
+    trend: "stable",
+    change: 0.2,
+    company: "Syngenta",
+    activeIngredient: "Profenofos 50%"
+  },
+  {
+    name: "Cypermethrin 25% EC",
+    type: "Insecticide",
+    price: 850,
+    unit: "₹/Liter",
+    trend: "up",
+    change: 2.1,
+    company: "FMC India",
+    activeIngredient: "Cypermethrin 25%"
+  },
+  {
+    name: "Thiamethoxam 25% WG",
+    type: "Insecticide",
+    price: 2200,
+    unit: "₹/kg",
+    trend: "down",
+    change: -1.3,
+    company: "Syngenta",
+    activeIngredient: "Thiamethoxam 25%"
+  },
+  {
+    name: "Fipronil 5% SC",
+    type: "Insecticide",
+    price: 1950,
+    unit: "₹/Liter",
+    trend: "up",
+    change: 3.5,
+    company: "BASF India",
+    activeIngredient: "Fipronil 5%"
+  },
+  {
+    name: "Acetamiprid 20% SP",
+    type: "Insecticide",
+    price: 1800,
+    unit: "₹/kg",
+    trend: "stable",
+    change: 0.1,
+    company: "Nippon Soda",
+    activeIngredient: "Acetamiprid 20%"
+  },
+  {
     name: "Mancozeb 75% WP",
     type: "Fungicide",
     price: 680,
@@ -29,24 +79,44 @@ const pesticideData = [
     activeIngredient: "Mancozeb 75%"
   },
   {
-    name: "2,4-D Sodium Salt 80% WP",
-    type: "Herbicide",
-    price: 320,
-    unit: "₹/kg",
-    trend: "down",
-    change: -2.3,
-    company: "Crystal Crop Protection",
-    activeIngredient: "2,4-D 80%"
-  },
-  {
-    name: "Imidacloprid 17.8% SL",
-    type: "Insecticide",
-    price: 1850,
+    name: "Propiconazole 25% EC",
+    type: "Fungicide",
+    price: 1450,
     unit: "₹/Liter",
     trend: "up",
-    change: 3.1,
+    change: 1.8,
+    company: "Syngenta",
+    activeIngredient: "Propiconazole 25%"
+  },
+  {
+    name: "Carbendazim 50% WP",
+    type: "Fungicide",
+    price: 420,
+    unit: "₹/kg",
+    trend: "down",
+    change: -0.8,
+    company: "BASF India",
+    activeIngredient: "Carbendazim 50%"
+  },
+  {
+    name: "Azoxystrobin 23% SC",
+    type: "Fungicide",
+    price: 3200,
+    unit: "₹/Liter",
+    trend: "up",
+    change: 2.5,
+    company: "Syngenta",
+    activeIngredient: "Azoxystrobin 23%"
+  },
+  {
+    name: "Tebuconazole 25.9% EC",
+    type: "Fungicide",
+    price: 1680,
+    unit: "₹/Liter",
+    trend: "stable",
+    change: 0.3,
     company: "Bayer CropScience",
-    activeIngredient: "Imidacloprid 17.8%"
+    activeIngredient: "Tebuconazole 25.9%"
   },
   {
     name: "Copper Oxychloride 50% WP",
@@ -59,6 +129,16 @@ const pesticideData = [
     activeIngredient: "Copper Oxychloride 50%"
   },
   {
+    name: "2,4-D Sodium Salt 80% WP",
+    type: "Herbicide",
+    price: 320,
+    unit: "₹/kg",
+    trend: "down",
+    change: -2.3,
+    company: "Crystal Crop Protection",
+    activeIngredient: "2,4-D 80%"
+  },
+  {
     name: "Glyphosate 41% SL",
     type: "Herbicide",
     price: 550,
@@ -67,6 +147,86 @@ const pesticideData = [
     change: -1.5,
     company: "Monsanto India",
     activeIngredient: "Glyphosate 41%"
+  },
+  {
+    name: "Atrazine 50% WP",
+    type: "Herbicide",
+    price: 380,
+    unit: "₹/kg",
+    trend: "up",
+    change: 1.2,
+    company: "Syngenta",
+    activeIngredient: "Atrazine 50%"
+  },
+  {
+    name: "Pendimethalin 30% EC",
+    type: "Herbicide",
+    price: 920,
+    unit: "₹/Liter",
+    trend: "stable",
+    change: 0.5,
+    company: "BASF India",
+    activeIngredient: "Pendimethalin 30%"
+  },
+  {
+    name: "Oxyfluorfen 23.5% EC",
+    type: "Herbicide",
+    price: 1250,
+    unit: "₹/Liter",
+    trend: "up",
+    change: 2.8,
+    company: "Dow AgroSciences",
+    activeIngredient: "Oxyfluorfen 23.5%"
+  },
+  {
+    name: "Imazethapyr 10% SL",
+    type: "Herbicide",
+    price: 1850,
+    unit: "₹/Liter",
+    trend: "down",
+    change: -1.1,
+    company: "BASF India",
+    activeIngredient: "Imazethapyr 10%"
+  },
+  {
+    name: "Imidacloprid 17.8% SL",
+    type: "Insecticide",
+    price: 1850,
+    unit: "₹/Liter",
+    trend: "up",
+    change: 3.1,
+    company: "Bayer CropScience",
+    activeIngredient: "Imidacloprid 17.8%"
+  },
+  {
+    name: "Lambda Cyhalothrin 5% EC",
+    type: "Insecticide",
+    price: 2400,
+    unit: "₹/Liter",
+    trend: "up",
+    change: 1.9,
+    company: "Syngenta",
+    activeIngredient: "Lambda Cyhalothrin 5%"
+  },
+  {
+    name: "Emamectin Benzoate 5% SG",
+    type: "Insecticide",
+    price: 4200,
+    unit: "₹/kg",
+    trend: "stable",
+    change: 0.2,
+    company: "Syngenta",
+    activeIngredient: "Emamectin Benzoate 5%"
+  },
+  {
+    name: "Spinosad 45% SC",
+    type: "Insecticide",
+    price: 5800,
+    unit: "₹/Liter",
+    trend: "up",
+    change: 3.8,
+    company: "Dow AgroSciences",
+    activeIngredient: "Spinosad 45%"
   }
 ];
 

@@ -8,7 +8,7 @@ interface FertilizerRatesProps {
   searchQuery: string;
 }
 
-// Mock data for demonstration
+// Comprehensive fertilizer data from Indian markets
 const fertilizerData = [
   {
     name: "Urea",
@@ -41,6 +41,76 @@ const fertilizerData = [
     company: "Tata Chemicals"
   },
   {
+    name: "NPK (10:26:26)",
+    type: "Inorganic",
+    price: 1380,
+    unit: "₹/50kg bag",
+    trend: "stable",
+    change: 0.2,
+    subsidyRate: 1150.75,
+    company: "IFFCO"
+  },
+  {
+    name: "NPK (20:20:0:13)",
+    type: "Inorganic",
+    price: 1250,
+    unit: "₹/50kg bag",
+    trend: "up",
+    change: 1.8,
+    subsidyRate: 1050.50,
+    company: "Krishak Bharati"
+  },
+  {
+    name: "Single Super Phosphate (SSP)",
+    type: "Inorganic",
+    price: 890,
+    unit: "₹/50kg bag",
+    trend: "down",
+    change: -1.2,
+    subsidyRate: 750.25,
+    company: "Zuari Agro"
+  },
+  {
+    name: "Muriate of Potash (MOP)",
+    type: "Inorganic",
+    price: 1680,
+    unit: "₹/50kg bag",
+    trend: "up",
+    change: 2.3,
+    subsidyRate: 1400.75,
+    company: "IPL"
+  },
+  {
+    name: "Sulphate of Potash (SOP)",
+    type: "Inorganic",
+    price: 2200,
+    unit: "₹/50kg bag",
+    trend: "stable",
+    change: 0.1,
+    subsidyRate: 1800.50,
+    company: "Coromandel"
+  },
+  {
+    name: "Calcium Ammonium Nitrate (CAN)",
+    type: "Inorganic",
+    price: 1150,
+    unit: "₹/50kg bag",
+    trend: "up",
+    change: 1.4,
+    subsidyRate: 950.25,
+    company: "Nagarjuna Fertilizers"
+  },
+  {
+    name: "Ammonium Sulphate",
+    type: "Inorganic",
+    price: 920,
+    unit: "₹/50kg bag",
+    trend: "down",
+    change: -0.8,
+    subsidyRate: 720.75,
+    company: "Rashtriya Chemicals"
+  },
+  {
     name: "Organic Compost",
     type: "Organic",
     price: 280,
@@ -69,6 +139,76 @@ const fertilizerData = [
     change: -1.8,
     subsidyRate: 50,
     company: "NCOF"
+  },
+  {
+    name: "Bio-Fertilizer (Azotobacter)",
+    type: "Organic",
+    price: 195,
+    unit: "₹/kg",
+    trend: "stable",
+    change: 0.3,
+    subsidyRate: 60,
+    company: "NCOF"
+  },
+  {
+    name: "Bio-Fertilizer (PSB)",
+    type: "Organic",
+    price: 175,
+    unit: "₹/kg",
+    trend: "up",
+    change: 1.1,
+    subsidyRate: 45,
+    company: "NCOF"
+  },
+  {
+    name: "Neem Cake",
+    type: "Organic",
+    price: 850,
+    unit: "₹/50kg bag",
+    trend: "up",
+    change: 2.5,
+    subsidyRate: 200,
+    company: "Multiple"
+  },
+  {
+    name: "Bone Meal",
+    type: "Organic",
+    price: 1200,
+    unit: "₹/50kg bag",
+    trend: "stable",
+    change: 0.5,
+    subsidyRate: 300,
+    company: "Local Units"
+  },
+  {
+    name: "Seaweed Extract",
+    type: "Organic",
+    price: 3200,
+    unit: "₹/10kg bag",
+    trend: "up",
+    change: 4.1,
+    subsidyRate: 500,
+    company: "Sea6 Energy"
+  },
+  {
+    name: "Humic Acid",
+    type: "Organic",
+    price: 2800,
+    unit: "₹/25kg bag",
+    trend: "stable",
+    change: 0.2,
+    subsidyRate: 400,
+    company: "Dhanuka Agritech"
+  },
+  {
+    name: "Liquid NPK (19:19:19)",
+    type: "Inorganic",
+    price: 420,
+    unit: "₹/Liter",
+    trend: "up",
+    change: 1.9,
+    subsidyRate: 120,
+    company: "Multiplex"
   }
 ];
 
