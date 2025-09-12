@@ -3,9 +3,11 @@ import { Badge } from "@/components/ui/badge";
 import { Leaf, TrendingUp, TrendingDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { getTranslation, Language } from "@/utils/translations";
 
 interface FertilizerRatesProps {
   searchQuery: string;
+  language: Language;
 }
 
 // Comprehensive fertilizer data from Indian markets
@@ -216,7 +218,7 @@ const fertilizerData = [
   }
 ];
 
-export const FertilizerRates = ({ searchQuery }: FertilizerRatesProps) => {
+export const FertilizerRates = ({ searchQuery, language }: FertilizerRatesProps) => {
   const [filterType, setFilterType] = useState<string>("all");
 
   const filteredFertilizers = fertilizerData.filter(fertilizer => {
@@ -241,7 +243,7 @@ export const FertilizerRates = ({ searchQuery }: FertilizerRatesProps) => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Leaf className="w-5 h-5 text-success" />
-          Fertilizer Rates
+          {getTranslation('fertilizerRates', language)}
         </CardTitle>
         <div className="flex gap-2 mt-2">
           <button
@@ -250,7 +252,7 @@ export const FertilizerRates = ({ searchQuery }: FertilizerRatesProps) => {
               filterType === "all" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
             }`}
           >
-            All
+            {getTranslation('all', language)}
           </button>
           <button
             onClick={() => setFilterType("organic")}
@@ -258,7 +260,7 @@ export const FertilizerRates = ({ searchQuery }: FertilizerRatesProps) => {
               filterType === "organic" ? "bg-success text-success-foreground" : "bg-muted text-muted-foreground"
             }`}
           >
-            Organic
+            {getTranslation('organic', language)}
           </button>
           <button
             onClick={() => setFilterType("inorganic")}
@@ -266,7 +268,7 @@ export const FertilizerRates = ({ searchQuery }: FertilizerRatesProps) => {
               filterType === "inorganic" ? "bg-info text-info-foreground" : "bg-muted text-muted-foreground"
             }`}
           >
-            Inorganic
+            {getTranslation('inorganic', language)}
           </button>
         </div>
       </CardHeader>

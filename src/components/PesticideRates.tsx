@@ -1,9 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Bug, TrendingUp, TrendingDown, Minus } from "lucide-react";
+import { useState } from "react";
+import { getTranslation, Language } from "@/utils/translations";
 
 interface PesticideRatesProps {
   searchQuery: string;
+  language: Language;
 }
 
 // Comprehensive pesticide data from Indian markets
@@ -234,11 +237,15 @@ const pesticideData = [
   }
 ];
 
-export const PesticideRates = ({ searchQuery }: PesticideRatesProps) => {
-  const filteredPesticides = pesticideData.filter(pesticide =>
-    pesticide.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    pesticide.type.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+export const PesticideRates = ({ searchQuery, language }: PesticideRatesProps) => {
+  const [filterType, setFilterType] = useState<string>("all");
+
+  const filteredPesticides = pesticideData.filter(pesticide => {
+    const matchesSearch = pesticide.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         pesticide.type.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesType = filterType === "all" || pesticide.type.toLowerCase() === filterType.toLowerCase();
+    return matchesSearch && matchesType;
+  });
 
   const getTrendIcon = (trend: string) => {
     switch (trend) {
@@ -269,8 +276,42 @@ export const PesticideRates = ({ searchQuery }: PesticideRatesProps) => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Bug className="w-5 h-5 text-warning" />
-          Pesticide Rates
+          {getTranslation('pesticideRates', language)}
         </CardTitle>
+        <div className="flex gap-2 mt-2 flex-wrap">
+          <button
+            onClick={() => setFilterType("all")}
+            className={`px-3 py-1 text-sm rounded-md ${
+              filterType === "all" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
+            }`}
+          >
+            {getTranslation('all', language)}
+          </button>
+          <button
+            onClick={() => setFilterType("insecticide")}
+            className={`px-3 py-1 text-sm rounded-md ${
+              filterType === "insecticide" ? "bg-destructive text-destructive-foreground" : "bg-muted text-muted-foreground"
+            }`}
+          >
+            {getTranslation('insecticide', language)}
+          </button>
+          <button
+            onClick={() => setFilterType("fungicide")}
+            className={`px-3 py-1 text-sm rounded-md ${
+              filterType === "fungicide" ? "bg-warning text-warning-foreground" : "bg-muted text-muted-foreground"
+            }`}
+          >
+            {getTranslation('fungicide', language)}
+          </button>
+          <button
+            onClick={() => setFilterType("herbicide")}
+            className={`px-3 py-1 text-sm rounded-md ${
+              filterType === "herbicide" ? "bg-success text-success-foreground" : "bg-muted text-muted-foreground"
+            }`}
+          >
+            {getTranslation('herbicide', language)}
+          </button>
+        </div>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">

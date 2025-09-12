@@ -96,11 +96,11 @@ const Index = () => {
               selectedMarket={selectedMarket}
               searchQuery={searchQuery}
             />
-            <FertilizerRates searchQuery={searchQuery} />
+            <FertilizerRates searchQuery={searchQuery} language={language} />
           </div>
           
           <div className="space-y-6">
-            <PesticideRates searchQuery={searchQuery} />
+            <PesticideRates searchQuery={searchQuery} language={language} />
             <PriceCharts />
           </div>
         </div>

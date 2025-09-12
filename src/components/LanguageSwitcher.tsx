@@ -19,6 +19,9 @@ export const LanguageSwitcher = ({ language, setLanguage }: LanguageSwitcherProp
         <SelectContent>
           <SelectItem value="en">English</SelectItem>
           <SelectItem value="mr">मराठी</SelectItem>
+          <SelectItem value="hi">हिन्दी</SelectItem>
+          <SelectItem value="gu">ગુજરાતી</SelectItem>
+          <SelectItem value="te">తెలుగు</SelectItem>
         </SelectContent>
       </Select>
     </div>
