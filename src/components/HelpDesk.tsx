@@ -6,22 +6,34 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { HelpCircle, Send, Phone, Mail, MessageCircle, Clock } from "lucide-react";
 import { useState } from "react";
+import { getTranslation } from "@/utils/translations";
+import { Language } from "@/utils/translations";
 
-export const HelpDesk = () => {
+interface HelpDeskProps {
+  language: Language;
+}
+
+export const HelpDesk = ({ language }: HelpDeskProps) => {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("");
-  const [contact, setContact] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Check if all fields are filled
+    if (!name.trim() || !email.trim() || !category || !query.trim()) {
+      return;
+    }
     setIsSubmitted(true);
     // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
       setQuery("");
       setCategory("");
-      setContact("");
+      setName("");
+      setEmail("");
     }, 3000);
   };
 
@@ -62,7 +74,7 @@ export const HelpDesk = () => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <HelpCircle className="w-5 h-5 text-info" />
-          Help Desk
+          {getTranslation('helpDesk', language)}
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -94,13 +106,38 @@ export const HelpDesk = () => {
 
             {/* Query Form */}
             <div>
-              <h4 className="font-medium text-foreground mb-3">Submit a Query</h4>
+              <h4 className="font-medium text-foreground mb-3">{getTranslation('submitQuery', language)}</h4>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="text-sm font-medium text-foreground block mb-2">
-                    Category
+                    {getTranslation('name', language)} *
                   </label>
-                  <Select value={category} onValueChange={setCategory}>
+                  <Input
+                    placeholder={getTranslation('enterName', language)}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium text-foreground block mb-2">
+                    {getTranslation('email', language)} *
+                  </label>
+                  <Input
+                    type="email"
+                    placeholder={getTranslation('enterEmail', language)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium text-foreground block mb-2">
+                    Category *
+                  </label>
+                  <Select value={category} onValueChange={setCategory} required>
                     <SelectTrigger>
                       <SelectValue placeholder="Select query category" />
                     </SelectTrigger>
@@ -116,22 +153,10 @@ export const HelpDesk = () => {
 
                 <div>
                   <label className="text-sm font-medium text-foreground block mb-2">
-                    Contact Information
-                  </label>
-                  <Input
-                    placeholder="Your phone number or email"
-                    value={contact}
-                    onChange={(e) => setContact(e.target.value)}
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="text-sm font-medium text-foreground block mb-2">
-                    Your Query
+                    {getTranslation('query', language)} *
                   </label>
                   <Textarea
-                    placeholder="Describe your query or issue in detail..."
+                    placeholder={getTranslation('describeQuery', language)}
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     rows={4}
@@ -142,10 +167,10 @@ export const HelpDesk = () => {
                 <Button 
                   type="submit" 
                   className="w-full"
-                  disabled={!query || !category || !contact}
+                  disabled={!name.trim() || !email.trim() || !category || !query.trim()}
                 >
                   <Send className="w-4 h-4 mr-2" />
-                  Submit Query
+                  {getTranslation('submit', language)}
                 </Button>
               </form>
             </div>

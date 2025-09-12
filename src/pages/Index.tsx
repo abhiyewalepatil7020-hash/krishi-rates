@@ -108,7 +108,7 @@ const Index = () => {
         {/* Government Schemes & Help Desk */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <GovernmentSchemes searchQuery={searchQuery} />
-          <HelpDesk />
+          <HelpDesk language={language} />
         </div>
       </main>
     </div>

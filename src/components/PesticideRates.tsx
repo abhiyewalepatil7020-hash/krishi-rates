@@ -16,7 +16,8 @@ const pesticideData = [
     trend: "up",
     change: 1.8,
     company: "UPL Limited",
-    activeIngredient: "Chlorpyrifos 20%"
+    activeIngredient: "Chlorpyrifos 20%",
+    use: "Controls termites, aphids, and soil insects in cotton, rice, and vegetables"
   },
   {
     name: "Profenofos 50% EC",
@@ -26,7 +27,8 @@ const pesticideData = [
     trend: "stable",
     change: 0.2,
     company: "Syngenta",
-    activeIngredient: "Profenofos 50%"
+    activeIngredient: "Profenofos 50%",
+    use: "Effective against bollworms, aphids, and thrips in cotton and vegetables"
   },
   {
     name: "Cypermethrin 25% EC",
@@ -76,7 +78,8 @@ const pesticideData = [
     trend: "stable",
     change: 0,
     company: "Indofil Industries",
-    activeIngredient: "Mancozeb 75%"
+    activeIngredient: "Mancozeb 75%",
+    use: "Controls blight, rust, and downy mildew in potatoes, tomatoes, and grapes"
   },
   {
     name: "Propiconazole 25% EC",
@@ -136,7 +139,8 @@ const pesticideData = [
     trend: "down",
     change: -2.3,
     company: "Crystal Crop Protection",
-    activeIngredient: "2,4-D 80%"
+    activeIngredient: "2,4-D 80%",
+    use: "Selective herbicide for broadleaf weeds in wheat, rice, and sugarcane"
   },
   {
     name: "Glyphosate 41% SL",
@@ -298,6 +302,10 @@ export const PesticideRates = ({ searchQuery }: PesticideRatesProps) => {
                     )}
                     {pesticide.change === 0 && "No change"}
                   </span>
+                </div>
+                <div className="mb-2">
+                  <span className="font-medium text-foreground">Use: </span>
+                  <span>{pesticide.use}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Active Ingredient: {pesticide.activeIngredient}</span>

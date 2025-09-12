@@ -18,7 +18,8 @@ const fertilizerData = [
     trend: "stable",
     change: 0,
     subsidyRate: 2067.75,
-    company: "IFFCO"
+    company: "IFFCO",
+    use: "Nitrogen source for leaf growth, suitable for all crops especially cereals"
   },
   {
     name: "DAP (Di-ammonium Phosphate)",
@@ -28,7 +29,8 @@ const fertilizerData = [
     trend: "down",
     change: -2.1,
     subsidyRate: 1583.50,
-    company: "Coromandel"
+    company: "Coromandel",
+    use: "Phosphorus and nitrogen for root development and flowering"
   },
   {
     name: "NPK (12:32:16)",
@@ -38,7 +40,8 @@ const fertilizerData = [
     trend: "up",
     change: 1.5,
     subsidyRate: 1200.25,
-    company: "Tata Chemicals"
+    company: "Tata Chemicals",
+    use: "Balanced nutrition for overall plant growth and fruit development"
   },
   {
     name: "NPK (10:26:26)",
@@ -118,7 +121,8 @@ const fertilizerData = [
     trend: "up",
     change: 3.2,
     subsidyRate: 0,
-    company: "Local Co-op"
+    company: "Local Co-op",
+    use: "Soil conditioner, improves soil structure and water retention"
   },
   {
     name: "Vermi Compost",
@@ -288,6 +292,10 @@ export const FertilizerRates = ({ searchQuery }: FertilizerRatesProps) => {
                 <div className="flex justify-between">
                   <span>Unit: {fertilizer.unit}</span>
                   <span>Company: {fertilizer.company}</span>
+                </div>
+                <div className="mb-2">
+                  <span className="font-medium text-foreground">Use: </span>
+                  <span>{fertilizer.use}</span>
                 </div>
                 {fertilizer.subsidyRate > 0 && (
                   <div className="flex justify-between">
