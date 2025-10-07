@@ -14,7 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      translations: {
+        Row: {
+          id: number
+          key: string
+          value: string
+          lang: 'en' | 'mr' | 'hi' | 'gu' | 'te'
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id?: number
+          key: string
+          value: string
+          lang: 'en' | 'mr' | 'hi' | 'gu' | 'te'
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: number
+          key?: string
+          value?: string
+          lang?: 'en' | 'mr' | 'hi' | 'gu' | 'te'
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

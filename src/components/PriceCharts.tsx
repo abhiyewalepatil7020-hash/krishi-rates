@@ -96,7 +96,7 @@ export const PriceCharts = ({ language }: PriceChartsProps) => {
                   dataKey="urea" 
                   stroke="hsl(var(--success))" 
                   strokeWidth={2}
-                  name="Urea"
+                  name={getTranslation('fertilizerPrices', language)}
                   dot={{ fill: "hsl(var(--success))", strokeWidth: 2, r: 4 }}
                 />
                 <Line 
@@ -132,7 +132,7 @@ export const PriceCharts = ({ language }: PriceChartsProps) => {
                 <Bar 
                   dataKey="chlorpyrifos" 
                   fill="hsl(var(--destructive))" 
-                  name="Chlorpyrifos"
+                  name={getTranslation('pesticidePrices', language)}
                   radius={[2, 2, 0, 0]}
                 />
                 <Bar 
@@ -152,12 +152,6 @@ export const PriceCharts = ({ language }: PriceChartsProps) => {
           </ResponsiveContainer>
         </div>
         
-        <div className="mt-4 p-3 bg-muted/50 rounded-lg">
-          <p className="text-sm text-muted-foreground">
-            📈 {activeChart === "fertilizer" ? "Fertilizer" : "Pesticide"} price trends over the last 6 months. 
-            Data refreshes every 5 minutes with live market rates.
-          </p>
-        </div>
       </CardContent>
     </Card>
   );

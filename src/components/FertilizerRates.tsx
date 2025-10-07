@@ -292,21 +292,21 @@ export const FertilizerRates = ({ searchQuery, language }: FertilizerRatesProps)
               
               <div className="text-sm text-muted-foreground space-y-1">
                 <div className="flex justify-between">
-                  <span>Unit: {fertilizer.unit}</span>
-                  <span>Company: {fertilizer.company}</span>
+                  <span>{getTranslation('unit', language)}: {fertilizer.unit}</span>
+                  <span>{getTranslation('company', language)}: {fertilizer.company}</span>
                 </div>
                 <div className="mb-2">
-                  <span className="font-medium text-foreground">Use: </span>
+                  <span className="font-medium text-foreground">{getTranslation('uses', language)}: </span>
                   <span>{fertilizer.use}</span>
                 </div>
                 {fertilizer.subsidyRate > 0 && (
                   <div className="flex justify-between">
-                    <span>Subsidy: ₹{fertilizer.subsidyRate}/MT</span>
+                    <span>{getTranslation('subsidy', language)}: ₹{fertilizer.subsidyRate}/MT</span>
                     <span className={fertilizer.trend === "up" ? "text-success" : fertilizer.trend === "down" ? "text-destructive" : "text-muted-foreground"}>
                       {fertilizer.change !== 0 && (
                         <>{fertilizer.change > 0 ? "+" : ""}{fertilizer.change}%</>
                       )}
-                      {fertilizer.change === 0 && "No change"}
+                      {fertilizer.change === 0 && getTranslation('noChange', language)}
                     </span>
                   </div>
                 )}
