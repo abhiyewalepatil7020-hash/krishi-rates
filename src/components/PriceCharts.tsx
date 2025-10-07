@@ -154,8 +154,7 @@ export const PriceCharts = ({ language }: PriceChartsProps) => {
         
         <div className="mt-4 p-3 bg-muted/50 rounded-lg">
           <p className="text-sm text-muted-foreground">
-            📈 {activeChart === "fertilizer" ? "Fertilizer" : "Pesticide"} price trends over the last 6 months. 
-            Data refreshes every 5 minutes with live market rates.
+            📈 {activeChart === "fertilizer" ? getTranslation('fertilizerTrendNote', language) : getTranslation('pesticideTrendNote', language)}
           </p>
         </div>
       </CardContent>

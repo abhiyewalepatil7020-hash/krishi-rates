@@ -22,7 +22,10 @@ const Index = () => {
   const [selectedMarket, setSelectedMarket] = useState("");
   const [lastUpdated, setLastUpdated] = useState(new Date());
   const [searchQuery, setSearchQuery] = useState("");
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<Language>(() => {
+    const saved = localStorage.getItem('app_language');
+    return (saved as Language) || 'en';
+  });
 
   // Refs for scrolling to sections
   const mandiRef = useRef<HTMLDivElement>(null);
@@ -44,6 +47,11 @@ const Index = () => {
     
     refs[section]?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  // Persist language selection
+  useEffect(() => {
+    localStorage.setItem('app_language', language);
+  }, [language]);
 
   // Simulate data refresh every 5 minutes
   useEffect(() => {

@@ -2,6 +2,7 @@ export const translations = {
   en: {
     // Header
     appTitle: "Live Market Rates for Farmers",
+    govTagline: "Government of India",
     searchPlaceholder: "Search commodities, fertilizers, or pesticides...",
     
     // Location Selector
@@ -79,15 +80,29 @@ export const translations = {
     amount: "Amount",
     deadline: "Deadline",
     type: "Type",
+    ongoing: "Ongoing",
     
     // Navigation
     quickAccess: "Quick Access",
-    selectSection: "Select Section"
+    selectSection: "Select Section",
+
+    // Help Desk
+    quickContact: "Quick Contact",
+    category: "Category",
+    selectQueryCategory: "Select query category",
+    querySubmittedTitle: "Query Submitted Successfully!",
+    querySubmittedDesc: "Your query has been forwarded to the government support team. You will receive a response within 24-48 hours.",
+    referenceId: "Reference ID",
+
+    // Charts notes
+    fertilizerTrendNote: "Fertilizer price trends over the last 6 months. Data refreshes every 5 minutes with live market rates.",
+    pesticideTrendNote: "Pesticide price trends over the last 6 months. Data refreshes every 5 minutes with live market rates."
   },
   
   mr: {
     // Header
     appTitle: "शेतकऱ्यांसाठी थेट बाजार दर",
+    govTagline: "भारत सरकार",
     searchPlaceholder: "वस्तू, खते किंवा कीटकनाशके शोधा...",
     
     // Location Selector
@@ -165,15 +180,29 @@ export const translations = {
     amount: "रक्कम",
     deadline: "अंतिम तारीख",
     type: "प्रकार",
+    ongoing: "सुरू आहे",
     
     // Navigation
     quickAccess: "त्वरित प्रवेश",
-    selectSection: "विभाग निवडा"
+    selectSection: "विभाग निवडा",
+
+    // Help Desk
+    quickContact: "त्वरीत संपर्क",
+    category: "वर्ग",
+    selectQueryCategory: "प्रश्न श्रेणी निवडा",
+    querySubmittedTitle: "प्रश्न यशस्वीरीत्या सबमिट झाला!",
+    querySubmittedDesc: "तुमचा प्रश्न सरकारी समर्थन टीमकडे पाठविला आहे. तुम्हाला २४-४८ तासांत प्रतिसाद मिळेल.",
+    referenceId: "संदर्भ क्रमांक",
+
+    // Charts notes
+    fertilizerTrendNote: "मागील ६ महिन्यांतील खतांच्या किंमतींचे ट्रेंड. डेटा प्रत्येक ५ मिनिटांनी थेट बाजार दरांसह रिफ्रेश होतो.",
+    pesticideTrendNote: "मागील ६ महिन्यांतील कीटकनाशकांच्या किंमतींचे ट्रेंड. डेटा प्रत्येक ५ मिनिटांनी थेट बाजार दरांसह रिफ्रेश होतो."
   },
 
   hi: {
     // Header
     appTitle: "किसानों के लिए लाइव मार्केट रेट्स",
+    govTagline: "भारत सरकार",
     searchPlaceholder: "कमोडिटी, उर्वरक, या कीटनाशक खोजें...",
     
     // Location Selector
@@ -251,15 +280,29 @@ export const translations = {
     amount: "राशि",
     deadline: "अंतिम तिथि",
     type: "प्रकार",
+    ongoing: "चालू",
     
     // Navigation
     quickAccess: "त्वरित पहुंच",
-    selectSection: "अनुभाग चुनें"
+    selectSection: "अनुभाग चुनें",
+
+    // Help Desk
+    quickContact: "त्वरित संपर्क",
+    category: "श्रेणी",
+    selectQueryCategory: "प्रश्न श्रेणी चुनें",
+    querySubmittedTitle: "प्रश्न सफलतापूर्वक जमा हुआ!",
+    querySubmittedDesc: "आपके प्रश्न को सरकारी सहायता टीम को भेज दिया गया है। आपको 24-48 घंटों के भीतर जवाब मिलेगा।",
+    referenceId: "संदर्भ आईडी",
+
+    // Charts notes
+    fertilizerTrendNote: "पिछले 6 महीनों में उर्वरक कीमतों की प्रवृत्तियां। डेटा हर 5 मिनट में लाइव बाजार दरों के साथ ताज़ा होता है।",
+    pesticideTrendNote: "पिछले 6 महीनों में कीटनाशक कीमतों की प्रवृत्तियां। डेटा हर 5 मिनट में लाइव बाजार दरों के साथ ताज़ा होता है।"
   },
 
   gu: {
     // Header
     appTitle: "ખેડૂતો માટે લાઇવ માર્કેટ રેટ્સ",
+    govTagline: "ભારત સરકાર",
     searchPlaceholder: "કમોડિટી, ખાતર, અથવા કીડનાશક શોધો...",
     
     // Location Selector
@@ -337,15 +380,29 @@ export const translations = {
     amount: "રકમ",
     deadline: "અંતિમ તારીખ",
     type: "પ્રકાર",
+    ongoing: "ચાલુ",
     
     // Navigation
     quickAccess: "ઝડપી ઍક્સેસ",
-    selectSection: "વિભાગ પસંદ કરો"
+    selectSection: "વિભાગ પસંદ કરો",
+
+    // Help Desk
+    quickContact: "ઝડપી સંપર્ક",
+    category: "શ્રેણી",
+    selectQueryCategory: "પ્રશ્ન શ્રેણી પસંદ કરો",
+    querySubmittedTitle: "પ્રશ્ન સફળતાપૂર્વક સબમિટ થયો!",
+    querySubmittedDesc: "તમારો પ્રશ્ન સરકારી સપોર્ટ ટીમને મોકલાયો છે. તમને 24-48 કલાકમાં જવાબ મળશે.",
+    referenceId: "સંદર્ભ આઈડી",
+
+    // Charts notes
+    fertilizerTrendNote: "છેલ્લા 6 મહિનામાં ખાતરની કિંમતોના ટ્રેન્ડ. ડેટા દરેક 5 મિનિટે લાઇવ બજાર દર સાથે રિફ્રેશ થાય છે.",
+    pesticideTrendNote: "છેલ્લા 6 મહિનામાં કીટનાશકની કિંમતોના ટ્રેન્ડ. ડેટા દરેક 5 મિનિટે લાઇવ બજાર દર સાથે રિફ્રેશ થાય છે."
   },
 
   te: {
     // Header
     appTitle: "రైతుల కోసం లైవ్ మార్కెట్ రేట్లు",
+    govTagline: "భారత ప్రభుత్వం",
     searchPlaceholder: "వస్తువులు, ఎరువులు, లేదా పురుగుమందులను వెతకండి...",
     
     // Location Selector
@@ -423,10 +480,23 @@ export const translations = {
     amount: "మొత్తం",
     deadline: "గడువు తేదీ",
     type: "రకం",
+    ongoing: "నడుస్తోంది",
     
     // Navigation
     quickAccess: "త్వరిత ప్రవేశం",
-    selectSection: "విభాగం ఎంచుకోండి"
+    selectSection: "విభాగం ఎంచుకోండి",
+
+    // Help Desk
+    quickContact: "త్వరిత సంప్రదింపు",
+    category: "వర్గం",
+    selectQueryCategory: "ప్రశ్న వర్గాన్ని ఎంచుకోండి",
+    querySubmittedTitle: "ప్రశ్న విజయవంతంగా సమర్పించబడింది!",
+    querySubmittedDesc: "మీ ప్రశ్నను ప్రభుత్వ సహాయ బృందానికి పంపించాం. 24-48 గంటల్లో మీకు ప్రతిస్పందన వస్తుంది.",
+    referenceId: "రిఫరెన్స్ ఐడి",
+
+    // Charts notes
+    fertilizerTrendNote: "గత 6 నెలల్లో ఎరువుల ధరల ధోరణులు. డేటా ప్రతి 5 నిమిషాలకు లైవ్ మార్కెట్ రేట్లతో రిఫ్రెష్ అవుతుంది.",
+    pesticideTrendNote: "గత 6 నెలల్లో పురుగుమందుల ధరల ధోరణులు. డేటా ప్రతి 5 నిమిషాలకు లైవ్ మార్కెట్ రేట్లతో రిఫ్రెష్ అవుతుంది."
   }
 };
 
