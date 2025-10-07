@@ -330,9 +330,9 @@ export const PesticideRates = ({ searchQuery, language }: PesticideRatesProps) =
                 </div>
               </div>
               
-              <div className="text-sm text-muted-foreground space-y-1">
+                <div className="text-sm text-muted-foreground space-y-1">
                 <div className="flex justify-between">
-                  <span>Unit: {pesticide.unit}</span>
+                  <span>{getTranslation('unit', language)}: {pesticide.unit}</span>
                   <span className={
                     pesticide.trend === "up" ? "text-success" : 
                     pesticide.trend === "down" ? "text-destructive" : 
@@ -341,16 +341,16 @@ export const PesticideRates = ({ searchQuery, language }: PesticideRatesProps) =
                     {pesticide.change !== 0 && (
                       <>{pesticide.change > 0 ? "+" : ""}{pesticide.change}%</>
                     )}
-                    {pesticide.change === 0 && "No change"}
+                    {pesticide.change === 0 && getTranslation('noChange', language)}
                   </span>
                 </div>
                 <div className="mb-2">
-                  <span className="font-medium text-foreground">Use: </span>
+                  <span className="font-medium text-foreground">{getTranslation('uses', language)}: </span>
                   <span>{pesticide.use}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Active Ingredient: {pesticide.activeIngredient}</span>
-                  <span>Company: {pesticide.company}</span>
+                  <span>{getTranslation('activeIngredient', language)}: {pesticide.activeIngredient}</span>
+                  <span>{getTranslation('company', language)}: {pesticide.company}</span>
                 </div>
               </div>
             </div>

@@ -22,7 +22,10 @@ const Index = () => {
   const [selectedMarket, setSelectedMarket] = useState("");
   const [lastUpdated, setLastUpdated] = useState(new Date());
   const [searchQuery, setSearchQuery] = useState("");
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<Language>(() => {
+    const saved = localStorage.getItem('app_language');
+    return (saved as Language) || 'en';
+  });
 
   // Refs for scrolling to sections
   const mandiRef = useRef<HTMLDivElement>(null);
@@ -44,6 +47,11 @@ const Index = () => {
     
     refs[section]?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  // Persist language selection
+  useEffect(() => {
+    localStorage.setItem('app_language', language);
+  }, [language]);
 
   // Simulate data refresh every 5 minutes
   useEffect(() => {
@@ -70,8 +78,26 @@ const Index = () => {
             <h1 className="text-3xl lg:text-5xl font-bold mb-4">
               {getTranslation('appTitle', language)}
             </h1>
-            <div className="flex justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
               <LanguageSwitcher language={language} setLanguage={setLanguage} />
+              <select
+                aria-label="Quick section selector"
+                className="px-3 py-2 rounded-md bg-white/90 text-black text-sm"
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (!value) return;
+                  handleNavigate(value);
+                }}
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  {getTranslation('selectSection', language)}
+                </option>
+                <option value="mandi-rates">{getTranslation('mandiRates', language)}</option>
+                <option value="fertilizers">{getTranslation('fertilizerRates', language)}</option>
+                <option value="pesticides">{getTranslation('pesticideRates', language)}</option>
+                <option value="help">{getTranslation('helpDesk', language)}</option>
+              </select>
             </div>
           </div>
         </div>

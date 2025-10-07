@@ -22,7 +22,7 @@ export const Header = ({ searchQuery, setSearchQuery, language }: HeaderProps) =
             </div>
             <div>
               <h1 className="text-xl font-bold text-foreground">{getTranslation('appTitle', language)}</h1>
-              <p className="text-xs text-muted-foreground">Government of India</p>
+              <p className="text-xs text-muted-foreground">{getTranslation('govTagline', language)}</p>
             </div>
           </div>
 

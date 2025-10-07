@@ -169,6 +169,107 @@ const equipmentData = [
     price: "₹40,000 - ₹1,50,000",
     image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400"
   }
+  ,
+  {
+    name: "Power Tiller",
+    nameTranslations: {
+      en: "Power Tiller",
+      mr: "पॉवर टिलर",
+      hi: "पावर टिलर",
+      gu: "પાવર ટિલર",
+      te: "పవర్ టిల్లర్"
+    },
+    uses: "Inter-cultivation, soil preparation in small farms, orchard operations",
+    usesTranslations: {
+      en: "Inter-cultivation, soil preparation in small farms, orchard operations",
+      mr: "मध्यम मशागत, लहान शेतांमध्ये माती तयारी, फळबाग कामे",
+      hi: "मध्यान्तर जुताई, छोटे खेतों में मिट्टी तैयारी, बाग कार्य",
+      gu: "વચ્ચેની ખેડ, નાના ખેતરોમાં માટી તૈયારી, બાગાયત કામ",
+      te: "అంతర దున్నడం, చిన్న పొలాల్లో నేల తయారీ, తోట పనులు"
+    },
+    price: "₹1,00,000 - ₹2,50,000",
+    image: "https://images.unsplash.com/photo-1561635741-2d7b3c29a7d5?w=400"
+  },
+  {
+    name: "Disc Plough",
+    nameTranslations: {
+      en: "Disc Plough",
+      mr: "डिस्क नांगर",
+      hi: "डिस्क हल",
+      gu: "ડિસ્ક હળ",
+      te: "డిస్క్ గలప"
+    },
+    uses: "Primary tillage, breaking hard soil, residue mixing",
+    usesTranslations: {
+      en: "Primary tillage, breaking hard soil, residue mixing",
+      mr: "प्राथमिक मशागत, कठीण माती फोडणे, अवशेष मिसळणे",
+      hi: "प्राथमिक जुताई, कड़ी मिट्टी तोड़ना, अवशेष मिलाना",
+      gu: "પ્રાથમિક ખેડ, કઠિન માટી તોડવી, અવશેષ ભેળવવું",
+      te: "ప్రాథమిక దున్నుట, కఠిన నేలను పగలగొట్టడం, అవశేషాల కలపడం"
+    },
+    price: "₹20,000 - ₹60,000",
+    image: "https://images.unsplash.com/photo-1585309155750-3dc2b3eb2e72?w=400"
+  },
+  {
+    name: "Baler",
+    nameTranslations: {
+      en: "Baler",
+      mr: "बेलेर",
+      hi: "बेलर",
+      gu: "બેલર",
+      te: "బేలర్"
+    },
+    uses: "Baling straw and hay, easy transport and storage",
+    usesTranslations: {
+      en: "Baling straw and hay, easy transport and storage",
+      mr: "काडीकचरा व गवत बंडल बनवणे, वाहतूक व साठवण सुलभ",
+      hi: "पराली और घास की गांठ बनाना, आसान परिवहन व भंडारण",
+      gu: "વણ અને ઘાસના ગાંઠ બનાવવું, સહેલાઇયું પરિવહન અને સંગ્રહ",
+      te: "పొలుసు, గడ్డిబీళ్ళు తయారు చేయడం, సులభ రవాణా మరియు నిల్వ"
+    },
+    price: "₹3,00,000 - ₹9,00,000",
+    image: "https://images.unsplash.com/photo-1596218936302-ec3a23a78665?w=400"
+  },
+  {
+    name: "Drone Sprayer",
+    nameTranslations: {
+      en: "Drone Sprayer",
+      mr: "ड्रोन स्प्रेयर",
+      hi: "ड्रोन स्प्रेयर",
+      gu: "ડ્રોન સ્પ્રેયર",
+      te: "డ్రోన్ స్ప్రేయర్"
+    },
+    uses: "Precise spraying, uniform coverage, reduced labor",
+    usesTranslations: {
+      en: "Precise spraying, uniform coverage, reduced labor",
+      mr: "अचूक फवारणी, एकसमान आच्छादन, मजुरी कमी",
+      hi: "सटीक छिड़काव, समान कवरेज, श्रम में कमी",
+      gu: "ચોક્કસ છંટકાવ, સમાન આવરણ, મજૂરીમાં ઘટાડો",
+      te: "ఖచ్చితమైన పిచికారీ, సమాన కవరేజ్, శ్రమ తగ్గింపు"
+    },
+    price: "₹50,000 - ₹3,00,000",
+    image: "https://images.unsplash.com/photo-1563865436873-1d1a84b2e1a0?w=400"
+  },
+  {
+    name: "Mulcher",
+    nameTranslations: {
+      en: "Mulcher",
+      mr: "मल्चर",
+      hi: "मल्चर",
+      gu: "મલ્ચર",
+      te: "మల్చర్"
+    },
+    uses: "Residue management, soil moisture conservation, weed suppression",
+    usesTranslations: {
+      en: "Residue management, soil moisture conservation, weed suppression",
+      mr: "अवशेष व्यवस्थापन, मातीतील ओलावा जपणे, तण नियंत्रण",
+      hi: "अवशेष प्रबंधन, मिट्टी नमी संरक्षण, खरपतवार दमन",
+      gu: "અવશેષ વ્યવસ્થાપન, માટીની ભેજ જાળવવું, નીંદણ દમન",
+      te: "అవశేష నిర్వహణ, నేల తేమ సంరక్షణ, గడ్డిపరక అణచివేత"
+    },
+    price: "₹1,50,000 - ₹4,00,000",
+    image: "https://images.unsplash.com/photo-1621416894569-9a9dfe9f089e?w=400"
+  }
 ];
 
 export const FarmingEquipments = ({ searchQuery, language }: FarmingEquipmentsProps) => {
