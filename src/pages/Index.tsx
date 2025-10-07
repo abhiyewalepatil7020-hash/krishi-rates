@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Header } from "@/components/Header";
 import { MandiRates } from "@/components/MandiRates";
 import { FertilizerRates } from "@/components/FertilizerRates";
@@ -8,6 +8,8 @@ import { HelpDesk } from "@/components/HelpDesk";
 import { PriceCharts } from "@/components/PriceCharts";
 import { LocationSelector } from "@/components/LocationSelector";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { QuickNav } from "@/components/QuickNav";
+import { FarmingEquipments } from "@/components/FarmingEquipments";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { RefreshCw } from "lucide-react";
@@ -21,6 +23,27 @@ const Index = () => {
   const [lastUpdated, setLastUpdated] = useState(new Date());
   const [searchQuery, setSearchQuery] = useState("");
   const [language, setLanguage] = useState<Language>("en");
+
+  // Refs for scrolling to sections
+  const mandiRef = useRef<HTMLDivElement>(null);
+  const fertilizersRef = useRef<HTMLDivElement>(null);
+  const pesticidesRef = useRef<HTMLDivElement>(null);
+  const equipmentRef = useRef<HTMLDivElement>(null);
+  const schemesRef = useRef<HTMLDivElement>(null);
+  const helpRef = useRef<HTMLDivElement>(null);
+
+  const handleNavigate = (section: string) => {
+    const refs: Record<string, React.RefObject<HTMLDivElement>> = {
+      "mandi-rates": mandiRef,
+      "fertilizers": fertilizersRef,
+      "pesticides": pesticidesRef,
+      "equipment": equipmentRef,
+      "schemes": schemesRef,
+      "help": helpRef,
+    };
+    
+    refs[section]?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   // Simulate data refresh every 5 minutes
   useEffect(() => {
@@ -87,28 +110,47 @@ const Index = () => {
           language={language}
         />
 
+        {/* Quick Navigation */}
+        <QuickNav onNavigate={handleNavigate} language={language} />
+
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="space-y-6">
-            <MandiRates 
-              selectedState={selectedState}
-              selectedDistrict={selectedDistrict}
-              selectedMarket={selectedMarket}
-              searchQuery={searchQuery}
-            />
-            <FertilizerRates searchQuery={searchQuery} language={language} />
+            <div ref={mandiRef}>
+              <MandiRates 
+                selectedState={selectedState}
+                selectedDistrict={selectedDistrict}
+                selectedMarket={selectedMarket}
+                searchQuery={searchQuery}
+                language={language}
+              />
+            </div>
+            <div ref={fertilizersRef}>
+              <FertilizerRates searchQuery={searchQuery} language={language} />
+            </div>
           </div>
           
           <div className="space-y-6">
-            <PesticideRates searchQuery={searchQuery} language={language} />
-            <PriceCharts />
+            <div ref={pesticidesRef}>
+              <PesticideRates searchQuery={searchQuery} language={language} />
+            </div>
+            <PriceCharts language={language} />
           </div>
+        </div>
+
+        {/* Farming Equipment */}
+        <div ref={equipmentRef}>
+          <FarmingEquipments searchQuery={searchQuery} language={language} />
         </div>
 
         {/* Government Schemes & Help Desk */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <GovernmentSchemes searchQuery={searchQuery} />
-          <HelpDesk language={language} />
+          <div ref={schemesRef}>
+            <GovernmentSchemes searchQuery={searchQuery} language={language} />
+          </div>
+          <div ref={helpRef}>
+            <HelpDesk language={language} />
+          </div>
         </div>
       </main>
     </div>

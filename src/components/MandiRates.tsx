@@ -1,14 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, TrendingDown, Minus } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { Language, getTranslation } from "@/utils/translations";
 
 interface MandiRatesProps {
   selectedState: string;
   selectedDistrict: string;
   selectedMarket: string;
   searchQuery: string;
+  language: Language;
 }
 
 // Comprehensive commodity data from Indian markets
@@ -231,7 +231,7 @@ const commodityData = [
   }
 ];
 
-export const MandiRates = ({ selectedState, selectedDistrict, selectedMarket, searchQuery }: MandiRatesProps) => {
+export const MandiRates = ({ selectedState, selectedDistrict, selectedMarket, searchQuery, language }: MandiRatesProps) => {
   const filteredCommodities = commodityData.filter(commodity =>
     commodity.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -262,9 +262,9 @@ export const MandiRates = ({ selectedState, selectedDistrict, selectedMarket, se
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
-          <span>Mandi Rates</span>
+          <span>{getTranslation('mandiRates', language)}</span>
           <Badge variant="outline" className="bg-success/10 text-success border-success">
-            Live
+            {getTranslation('live', language)}
           </Badge>
         </CardTitle>
         {selectedMarket && (
@@ -280,9 +280,9 @@ export const MandiRates = ({ selectedState, selectedDistrict, selectedMarket, se
               <div>
                 <h4 className="font-medium text-foreground">{commodity.name}</h4>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span>Min: {commodity.minPrice}</span>
+                  <span>{getTranslation('min', language)}: {commodity.minPrice}</span>
                   <span>•</span>
-                  <span>Max: {commodity.maxPrice}</span>
+                  <span>{getTranslation('max', language)}: {commodity.maxPrice}</span>
                 </div>
               </div>
               <div className="text-right">
@@ -298,7 +298,7 @@ export const MandiRates = ({ selectedState, selectedDistrict, selectedMarket, se
                       {commodity.change > 0 ? "+" : ""}{commodity.change}%
                     </>
                   )}
-                  {commodity.change === 0 && "No change"}
+                  {commodity.change === 0 && getTranslation('noChange', language)}
                 </div>
               </div>
             </div>

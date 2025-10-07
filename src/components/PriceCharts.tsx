@@ -3,6 +3,11 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { TrendingUp, BarChart3, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Language, getTranslation } from "@/utils/translations";
+
+interface PriceChartsProps {
+  language: Language;
+}
 
 // Mock data for demonstration
 const fertilizerPriceData = [
@@ -23,7 +28,7 @@ const pesticidePriceData = [
   { month: "Jun", chlorpyrifos: 420, mancozeb: 680, imidacloprid: 1850 },
 ];
 
-export const PriceCharts = () => {
+export const PriceCharts = ({ language }: PriceChartsProps) => {
   const [activeChart, setActiveChart] = useState<"fertilizer" | "pesticide">("fertilizer");
 
   const CustomTooltip = ({ active, payload, label }: any) => {
@@ -47,7 +52,7 @@ export const PriceCharts = () => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <BarChart3 className="w-5 h-5 text-primary" />
-          Price Trends
+          {getTranslation('priceCharts', language)}
         </CardTitle>
         <div className="flex gap-2">
           <Button
@@ -57,7 +62,7 @@ export const PriceCharts = () => {
             className="flex items-center gap-1"
           >
             <TrendingUp className="w-4 h-4" />
-            Fertilizers
+            {getTranslation('fertilizerRates', language)}
           </Button>
           <Button
             variant={activeChart === "pesticide" ? "default" : "outline"}
@@ -66,7 +71,7 @@ export const PriceCharts = () => {
             className="flex items-center gap-1"
           >
             <Calendar className="w-4 h-4" />
-            Pesticides
+            {getTranslation('pesticideRates', language)}
           </Button>
         </div>
       </CardHeader>

@@ -2,9 +2,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Award, Calendar, MapPin } from "lucide-react";
+import { Language, getTranslation } from "@/utils/translations";
 
 interface GovernmentSchemesProps {
   searchQuery: string;
+  language: Language;
 }
 
 // Mock data for demonstration
@@ -65,7 +67,7 @@ const schemes = [
   }
 ];
 
-export const GovernmentSchemes = ({ searchQuery }: GovernmentSchemesProps) => {
+export const GovernmentSchemes = ({ searchQuery, language }: GovernmentSchemesProps) => {
   const filteredSchemes = schemes.filter(scheme =>
     scheme.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     scheme.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -94,7 +96,7 @@ export const GovernmentSchemes = ({ searchQuery }: GovernmentSchemesProps) => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Award className="w-5 h-5 text-primary" />
-          Government Schemes
+          {getTranslation('governmentSchemes', language)}
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -119,18 +121,18 @@ export const GovernmentSchemes = ({ searchQuery }: GovernmentSchemesProps) => {
               <div className="space-y-2 text-sm">
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-muted-foreground">Eligibility:</span>
+                  <span className="text-muted-foreground">{getTranslation('eligibility', language)}:</span>
                   <span className="text-foreground">{scheme.eligibility}</span>
                 </div>
                 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-muted-foreground" />
-                    <span className="text-muted-foreground">Deadline:</span>
+                    <span className="text-muted-foreground">{getTranslation('deadline', language)}:</span>
                     <span className="text-foreground">{scheme.deadline}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-muted-foreground">Amount:</span>
+                    <span className="text-muted-foreground">{getTranslation('amount', language)}:</span>
                     <span className="font-semibold text-success">{scheme.amount}</span>
                   </div>
                 </div>
@@ -139,10 +141,10 @@ export const GovernmentSchemes = ({ searchQuery }: GovernmentSchemesProps) => {
               <div className="flex gap-2 mt-3">
                 <Button size="sm" variant="outline" className="flex items-center gap-1">
                   <ExternalLink className="w-3 h-3" />
-                  Apply Now
+                  {getTranslation('applyNow', language)}
                 </Button>
                 <Button size="sm" variant="ghost">
-                  Learn More
+                  {getTranslation('learnMore', language)}
                 </Button>
               </div>
             </div>

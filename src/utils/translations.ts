@@ -65,7 +65,24 @@ export const translations = {
     // Pesticide Types
     insecticide: "Insecticide",
     fungicide: "Fungicide", 
-    herbicide: "Herbicide"
+    herbicide: "Herbicide",
+    
+    // Farming Equipment
+    farmingEquipment: "Farming Equipment",
+    equipmentName: "Equipment Name",
+    uses: "Uses",
+    price: "Price",
+    
+    // Government Schemes
+    applyNow: "Apply Now",
+    learnMore: "Learn More",
+    amount: "Amount",
+    deadline: "Deadline",
+    type: "Type",
+    
+    // Navigation
+    quickAccess: "Quick Access",
+    selectSection: "Select Section"
   },
   
   mr: {
@@ -134,7 +151,24 @@ export const translations = {
     // Pesticide Types
     insecticide: "कीटकनाशक",
     fungicide: "बुरशीनाशक",
-    herbicide: "तणनाशक"
+    herbicide: "तणनाशक",
+    
+    // Farming Equipment
+    farmingEquipment: "शेती उपकरणे",
+    equipmentName: "उपकरणाचे नाव",
+    uses: "उपयोग",
+    price: "किंमत",
+    
+    // Government Schemes
+    applyNow: "आता अर्ज करा",
+    learnMore: "अधिक जाणून घ्या",
+    amount: "रक्कम",
+    deadline: "अंतिम तारीख",
+    type: "प्रकार",
+    
+    // Navigation
+    quickAccess: "त्वरित प्रवेश",
+    selectSection: "विभाग निवडा"
   },
 
   hi: {
@@ -203,7 +237,24 @@ export const translations = {
     // Pesticide Types
     insecticide: "कीटनाशक",
     fungicide: "फफूंदनाशक",
-    herbicide: "खरपतवारनाशी"
+    herbicide: "खरपतवारनाशी",
+    
+    // Farming Equipment
+    farmingEquipment: "कृषि उपकरण",
+    equipmentName: "उपकरण का नाम",
+    uses: "उपयोग",
+    price: "कीमत",
+    
+    // Government Schemes
+    applyNow: "अभी आवेदन करें",
+    learnMore: "और जानें",
+    amount: "राशि",
+    deadline: "अंतिम तिथि",
+    type: "प्रकार",
+    
+    // Navigation
+    quickAccess: "त्वरित पहुंच",
+    selectSection: "अनुभाग चुनें"
   },
 
   gu: {
@@ -272,7 +323,24 @@ export const translations = {
     // Pesticide Types
     insecticide: "કીડનાશક",
     fungicide: "ફૂગનાશક",
-    herbicide: "નીંદણનાશક"
+    herbicide: "નીંદણનાશક",
+    
+    // Farming Equipment
+    farmingEquipment: "ખેતી સાધનો",
+    equipmentName: "સાધનનું નામ",
+    uses: "ઉપયોગ",
+    price: "કિંમત",
+    
+    // Government Schemes
+    applyNow: "હમણાં અરજી કરો",
+    learnMore: "વધુ જાણો",
+    amount: "રકમ",
+    deadline: "અંતિમ તારીખ",
+    type: "પ્રકાર",
+    
+    // Navigation
+    quickAccess: "ઝડપી ઍક્સેસ",
+    selectSection: "વિભાગ પસંદ કરો"
   },
 
   te: {
@@ -341,7 +409,24 @@ export const translations = {
     // Pesticide Types
     insecticide: "కీటనాశిని",
     fungicide: "శిలీంధ్రనాశిని",
-    herbicide: "కలుపు మందు"
+    herbicide: "కలుపు మందు",
+    
+    // Farming Equipment
+    farmingEquipment: "వ్యవసాయ పరికరాలు",
+    equipmentName: "పరికరం పేరు",
+    uses: "ఉపయోగాలు",
+    price: "ధర",
+    
+    // Government Schemes
+    applyNow: "ఇప్పుడే దరఖాస్తు చేయండి",
+    learnMore: "మరింత తెలుసుకోండి",
+    amount: "మొత్తం",
+    deadline: "గడువు తేదీ",
+    type: "రకం",
+    
+    // Navigation
+    quickAccess: "త్వరిత ప్రవేశం",
+    selectSection: "విభాగం ఎంచుకోండి"
   }
 };
 
