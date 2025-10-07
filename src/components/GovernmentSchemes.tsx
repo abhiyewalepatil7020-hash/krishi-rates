@@ -112,7 +112,7 @@ export const GovernmentSchemes = ({ searchQuery, language }: GovernmentSchemesPr
                 </div>
                 <Badge variant={scheme.status === "Active" ? "default" : "secondary"} 
                        className={scheme.status === "Active" ? "bg-success text-success-foreground" : ""}>
-                  {scheme.status}
+                  {scheme.status === "Active" ? getTranslation('active', language) : scheme.status}
                 </Badge>
               </div>
               

@@ -39,19 +39,19 @@ export const HelpDesk = ({ language }: HelpDeskProps) => {
 
   const quickActions = [
     {
-      title: "Toll-Free Helpline",
+      title: getTranslation('tollFreeHelpline', language),
       description: "1800-123-4567",
       icon: <Phone className="w-5 h-5" />,
-      available: "24/7"
+      available: getTranslation('available247', language)
     },
     {
-      title: "Email Support",
+      title: getTranslation('emailSupport', language),
       description: "support@kisanmandi.gov.in",
       icon: <Mail className="w-5 h-5" />,
-      available: "Business Hours"
+      available: getTranslation('businessHours', language)
     },
     {
-      title: "WhatsApp Chat",
+      title: getTranslation('whatsappChat', language),
       description: "+91-98765-43210",
       icon: <MessageCircle className="w-5 h-5" />,
       available: "9 AM - 6 PM"
@@ -59,14 +59,14 @@ export const HelpDesk = ({ language }: HelpDeskProps) => {
   ];
 
   const categories = [
-    "Mandi Rate Inquiry",
-    "Fertilizer Information",
-    "Pesticide Guidance",
-    "Government Schemes",
-    "Technical Support",
-    "Market Access",
-    "Payment Issues",
-    "Other"
+    getTranslation('mandiRateInquiry', language),
+    getTranslation('fertilizerInformation', language),
+    getTranslation('pesticideGuidance', language),
+    getTranslation('governmentSchemes', language),
+    getTranslation('technicalSupport', language),
+    getTranslation('marketAccess', language),
+    getTranslation('paymentIssues', language),
+    getTranslation('other', language)
   ];
 
   return (
@@ -82,7 +82,7 @@ export const HelpDesk = ({ language }: HelpDeskProps) => {
           <div className="space-y-6">
             {/* Quick Actions */}
             <div>
-              <h4 className="font-medium text-foreground mb-3">Quick Contact</h4>
+              <h4 className="font-medium text-foreground mb-3">{getTranslation('quickContact', language)}</h4>
               <div className="grid grid-cols-1 gap-3">
                 {quickActions.map((action, index) => (
                   <div key={index} className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
@@ -135,11 +135,11 @@ export const HelpDesk = ({ language }: HelpDeskProps) => {
 
                 <div>
                   <label className="text-sm font-medium text-foreground block mb-2">
-                    Category *
+                    {getTranslation('category', language)} *
                   </label>
                   <Select value={category} onValueChange={setCategory} required>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select query category" />
+                      <SelectValue placeholder={getTranslation('selectQueryCategory', language)} />
                     </SelectTrigger>
                     <SelectContent>
                       {categories.map((cat) => (
@@ -180,13 +180,12 @@ export const HelpDesk = ({ language }: HelpDeskProps) => {
             <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <HelpCircle className="w-8 h-8 text-success" />
             </div>
-            <h4 className="font-semibold text-foreground mb-2">Query Submitted Successfully!</h4>
+            <h4 className="font-semibold text-foreground mb-2">{getTranslation('querySubmitted', language)}</h4>
             <p className="text-sm text-muted-foreground mb-4">
-              Your query has been forwarded to the government support team. 
-              You will receive a response within 24-48 hours.
+              {getTranslation('querySubmittedDesc', language)}
             </p>
             <Badge className="bg-success text-success-foreground">
-              Reference ID: KMP-{Date.now().toString().slice(-6)}
+              {getTranslation('referenceId', language)}: KMP-{Date.now().toString().slice(-6)}
             </Badge>
           </div>
         )}

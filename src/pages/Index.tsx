@@ -13,7 +13,7 @@ import { FarmingEquipments } from "@/components/FarmingEquipments";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { RefreshCw } from "lucide-react";
-import { Language, getTranslation } from "@/utils/translations";
+import { Language, getTranslation, preloadTranslations } from "@/utils/translations";
 import farmersHero from "@/assets/farmers-hero.jpg";
 
 const Index = () => {
@@ -53,6 +53,22 @@ const Index = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  // Preload translations when language changes and ensure English fallback is present
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      await Promise.all([
+        preloadTranslations('en'),
+        preloadTranslations(language)
+      ]);
+      if (!cancelled) {
+        // trigger a re-render so getTranslation reads loaded cache
+        setLastUpdated(new Date(lastUpdated));
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [language]);
 
   return (
     <div className="min-h-screen bg-background">
