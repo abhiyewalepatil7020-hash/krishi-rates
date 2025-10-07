@@ -12,6 +12,7 @@ import { QuickNav } from "@/components/QuickNav";
 import { FarmingEquipments } from "@/components/FarmingEquipments";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RefreshCw } from "lucide-react";
 import { Language, getTranslation } from "@/utils/translations";
 import farmersHero from "@/assets/farmers-hero.jpg";
@@ -109,6 +110,22 @@ const Index = () => {
           setSelectedMarket={setSelectedMarket}
           language={language}
         />
+
+        {/* Quick Dropdown Navigation */}
+        <div className="flex items-center gap-3">
+          <span className="text-sm text-muted-foreground">Quick Jump:</span>
+          <Select onValueChange={(value) => handleNavigate(value)}>
+            <SelectTrigger className="w-64">
+              <SelectValue placeholder="Select section" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="mandi-rates">{getTranslation('mandiRates', language)}</SelectItem>
+              <SelectItem value="fertilizers">{getTranslation('fertilizerRates', language)}</SelectItem>
+              <SelectItem value="pesticides">{getTranslation('pesticideRates', language)}</SelectItem>
+              <SelectItem value="help">{getTranslation('helpDesk', language)}</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
 
         {/* Quick Navigation */}
         <QuickNav onNavigate={handleNavigate} language={language} />
